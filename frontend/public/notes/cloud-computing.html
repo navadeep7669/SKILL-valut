@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cloud Infrastructure Scale — Complete Study Guide | SkillValut X</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#030712;--sf:#070f1f;--sf2:#0b1629;--bd:#1e2d4a;--tx:#e2e8f0;--mu:#64748b;--cy:#22d3ee;--in:#818cf8;--em:#34d399;--pu:#c084fc;--am:#fbbf24}
+body{background:var(--bg);color:var(--tx);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.75;font-size:15px}
+@media print{:root{--bg:#fff;--sf:#f8fafc;--sf2:#f1f5f9;--bd:#e2e8f0;--tx:#1e293b;--mu:#64748b}body{font-size:12px}.no-print{display:none!important}.phase{break-inside:avoid}a{color:#0369a1}pre{white-space:pre-wrap}}
+.bar{position:sticky;top:0;z-index:100;background:rgba(3,7,18,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);padding:.6rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.bar-logo{font-family:monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:var(--em);font-weight:700}
+.pdf-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1.1rem;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;border-radius:.4rem;cursor:pointer;font-size:.78rem;font-weight:600;transition:opacity .2s}
+.pdf-btn:hover{opacity:.85}
+.wrap{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.hdr{text-align:center;padding:3rem 2rem;background:radial-gradient(ellipse at top,rgba(16,185,129,.08),transparent 70%),var(--sf);border:1px solid var(--bd);border-radius:1rem;margin-bottom:2rem}
+.badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:var(--em);padding:.3rem .9rem;border-radius:999px;font-size:.72rem;font-family:monospace;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.2rem}
+h1{font-size:2.1rem;font-weight:900;letter-spacing:-.02em;background:linear-gradient(135deg,var(--em),var(--cy),var(--in));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.75rem}
+.hdr p{color:var(--mu);font-size:.9rem;max-width:520px;margin:0 auto}
+.meta{display:flex;justify-content:center;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+.mi{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--mu);font-family:monospace}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--em);display:inline-block}
+.toc{background:var(--sf);border:1px solid var(--bd);border-radius:.75rem;padding:1.5rem 2rem;margin-bottom:2rem}
+.toc-ttl{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--mu);font-family:monospace;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.toc-ttl::after{content:'';flex:1;height:1px;background:var(--bd)}
+.toc-g{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem}
+.ti{display:flex;align-items:center;gap:.75rem;padding:.6rem .75rem;background:var(--sf2);border:1px solid var(--bd);border-radius:.5rem;text-decoration:none;transition:border-color .2s}
+.ti:hover{border-color:var(--em)}
+.pn{width:28px;height:28px;border-radius:.35rem;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;font-family:monospace;flex-shrink:0}
+.pl{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);font-family:monospace}
+.pname{font-size:.82rem;font-weight:600;color:var(--tx)}
+.phase{border:1px solid var(--bd);border-radius:.75rem;margin-bottom:2rem;overflow:hidden}
+.ph{padding:1rem 1.5rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:1rem}
+.pi{width:38px;height:38px;border-radius:.5rem;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.pht{flex:1}
+.ptag{font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;font-family:monospace;margin-bottom:.2rem}
+.ptitle{font-size:1.05rem;font-weight:700}
+.phrs{font-size:.72rem;font-family:monospace;color:var(--mu);padding:.2rem .6rem;border:1px solid var(--bd);border-radius:.35rem}
+.pb{padding:1.5rem}
+.st{display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:700;margin:1.5rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--bd)}
+.st:first-child{margin-top:0}
+.sd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+p{color:#94a3b8;font-size:.88rem;margin-bottom:.75rem;line-height:1.7}
+strong{color:var(--tx)}
+code{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.15);color:var(--em);padding:.1rem .35rem;border-radius:.25rem;font-family:'JetBrains Mono','Fira Code',monospace;font-size:.8rem}
+.cb{background:#020810;border:1px solid var(--bd);border-radius:.6rem;overflow:hidden;margin:1rem 0}
+.ch{background:var(--sf2);border-bottom:1px solid var(--bd);padding:.4rem 1rem;display:flex;align-items:center;justify-content:space-between}
+.cl{font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;font-family:monospace;color:var(--mu)}
+.cd{display:flex;gap:.35rem}
+.cdo{width:10px;height:10px;border-radius:50%}
+pre{margin:0;padding:1.2rem;overflow-x:auto;font-family:'JetBrains Mono','Fira Code',monospace;font-size:.79rem;line-height:1.7;color:#34d399}
+.tw{overflow-x:auto;margin:1rem 0}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+th{background:var(--sf2);border:1px solid var(--bd);padding:.55rem .9rem;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-family:monospace}
+td{border:1px solid var(--bd);padding:.55rem .9rem;color:#94a3b8;vertical-align:top}
+tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+td strong{color:var(--tx)}
+td code{font-size:.75rem}
+.tip,.warn,.info{padding:.75rem 1rem;border-radius:0 .5rem .5rem 0;margin:1rem 0;font-size:.84rem;line-height:1.6;color:#94a3b8}
+.tip{background:rgba(52,211,153,.05);border-left:3px solid var(--em)}
+.warn{background:rgba(251,191,36,.05);border-left:3px solid var(--am)}
+.info{background:rgba(129,140,248,.05);border-left:3px solid var(--in)}
+.tip strong{color:var(--em)}.warn strong{color:var(--am)}.info strong{color:var(--in)}
+ul,ol{padding-left:1.5rem;margin-bottom:.75rem}
+li{color:#94a3b8;font-size:.88rem;margin-bottom:.35rem;line-height:1.6}
+li strong{color:var(--tx)}
+.kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.75rem;margin:1rem 0}
+.kc{background:var(--sf2);border:1px solid var(--bd);border-radius:.6rem;padding:.9rem}
+.ke{font-size:1.3rem;margin-bottom:.4rem;display:block}
+.kt{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:.3rem;font-family:monospace}
+.kd{font-size:.8rem;color:var(--mu)}
+.footer{text-align:center;border-top:1px solid var(--bd);padding:2rem;color:var(--mu);font-size:.78rem;font-family:monospace;margin-top:2rem}
+</style>
+</head>
+<body>
+<div class="bar no-print">
+  <span class="bar-logo">⚡ SkillValut X · Study Notes</span>
+  <button class="pdf-btn" onclick="window.print()">📄 Save as PDF</button>
+</div>
+<div class="wrap">
+
+<header class="hdr">
+  <div class="badge">☁️ Cloud Infrastructure Scale Track</div>
+  <h1>Cloud Computing<br>Complete Guide</h1>
+  <p>From core virtualization and AWS services to Docker isolation, Kubernetes orchestration, Infrastructure as Code, and resilient system design.</p>
+  <div class="meta">
+    <span class="mi"><span class="dot"></span> 4 Phases</span>
+    <span class="mi"><span class="dot" style="background:var(--em)"></span> 38+ Hours Total</span>
+    <span class="mi"><span class="dot" style="background:var(--cy)"></span> Beginner → Advanced</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-ttl">Contents</div>
+  <div class="toc-g">
+    <a href="#p1" class="ti"><div class="pn" style="background:rgba(52,211,153,.1);color:var(--em)">P1</div><div><div class="pl">Phase 1 · 5h</div><div class="pname">Cloud Fundamentals</div></div></a>
+    <a href="#p2" class="ti"><div class="pn" style="background:rgba(34,211,238,.1);color:var(--cy)">P2</div><div><div class="pl">Phase 2 · 8h</div><div class="pname">Containers & Kubernetes</div></div></a>
+    <a href="#p3" class="ti"><div class="pn" style="background:rgba(129,140,248,.1);color:var(--in)">P3</div><div><div class="pl">Phase 3 · 10h</div><div class="pname">IaC & CI/CD Pipelines</div></div></a>
+    <a href="#p4" class="ti"><div class="pn" style="background:rgba(192,132,252,.1);color:var(--pu)">P4</div><div><div class="pl">Phase 4 · 15h</div><div class="pname">Microservices & Resilience</div></div></a>
+  </div>
+</nav>
+
+<!-- PHASE 1 -->
+<section id="p1" class="phase">
+  <div class="ph" style="background:rgba(52,211,153,.03)">
+    <div class="pi" style="background:rgba(52,211,153,.1)">☁️</div>
+    <div class="pht"><div class="ptag" style="color:var(--em)">Phase 1 · Core Fundamentals</div><div class="ptitle">Virtualization, AWS Core Systems & Security Policies</div></div>
+    <span class="phrs">~5 hrs</span>
+  </div>
+  <div class="pb">
+
+    <div class="st"><span class="sd" style="background:var(--em)"></span>Understanding Service Models (IaaS, PaaS, SaaS)</div>
+    <p>Cloud architecture is divided based on what part of the stack the cloud provider manages vs what the developer controls.</p>
+    <div class="tw"><table>
+      <tr><th>Model</th><th>Stands For</th><th>What You Manage</th><th>Examples</th></tr>
+      <tr><td><strong>IaaS</strong></td><td>Infrastructure as a Service</td><td>OS, Runtime, Middleware, Code, DBs</td><td>AWS EC2, Google Compute Engine</td></tr>
+      <tr><td><strong>PaaS</strong></td><td>Platform as a Service</td><td>Application code and logic configurations</td><td>AWS Elastic Beanstalk, Heroku, Vercel</td></tr>
+      <tr><td><strong>SaaS</strong></td><td>Software as a Service</td><td>Nothing (just consume the app)</td><td>Google Workspace, Microsoft 365, Slack</td></tr>
+    </table></div>
+
+    <div class="st"><span class="sd" style="background:var(--em)"></span>AWS Core Services Reference</div>
+    <div class="tw"><table>
+      <tr><th>Service</th><th>Category</th><th>Primary Use Case</th><th>Best Practice</th></tr>
+      <tr><td><strong>EC2</strong></td><td>Compute</td><td>Virtual servers in the cloud</td><td>Set Auto-Scaling groups with target parameters</td></tr>
+      <tr><td><strong>S3</strong></td><td>Storage</td><td>Highly durable key-value object storage</td><td>Enable versioning and lifecycle transition rules</td></tr>
+      <tr><td><strong>VPC</strong></td><td>Networking</td><td>Isolated private network boundary</td><td>Separate public subnets from database private subnets</td></tr>
+      <tr><td><strong>IAM</strong></td><td>Security</td><td>Access management and identity logs</td><td>Enforce Least Privilege (never use root API keys)</td></tr>
+    </table></div>
+
+    <div class="cb"><div class="ch"><div class="cd"><div class="cdo" style="background:#ff5f56"></div><div class="cdo" style="background:#ffbd2e"></div><div class="cdo" style="background:#27c93f"></div></div><span class="cl">JSON — AWS IAM Least Privilege Policy Example</span></div>
+<pre>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::skillvault-x-student-data/*"
+    }
+  ]
+}</pre></div>
+
+    <div class="tip"><strong>💡 Rule:</strong> Never commit AWS Access Keys or Secret Keys into git files. Always use AWS IAM Roles mounted to EC2 instances instead!</div>
+
+  </div>
+</section>
+
+<!-- PHASE 2 -->
+<section id="p2" class="phase">
+  <div class="ph" style="background:rgba(34,211,238,.03)">
+    <div class="pi" style="background:rgba(34,211,238,.1)">🐳</div>
+    <div class="pht"><div class="ptag" style="color:var(--cy)">Phase 2 · Deep Dive Focus</div><div class="ptitle">Docker Containerization & Kubernetes Orchestration</div></div>
+    <span class="phrs">~8 hrs</span>
+  </div>
+  <div class="pb">
+
+    <div class="st"><span class="sd" style="background:var(--cy)"></span>VMs vs Containers</div>
+    <p>Virtual Machines virtualize physical hardware, whereas containers share the host operating system kernel, making them extremely lightweight and fast.</p>
+    <div class="tw"><table>
+      <tr><th>Aspect</th><th>Virtual Machines</th><th>Docker Containers</th></tr>
+      <tr><td><strong>Isolation</strong></td><td>Hardware-level (Hypervisor)</td><td>OS-level (Namespaces & Cgroups)</td></tr>
+      <tr><td><strong>Speed</strong></td><td>Minutes to boot up</td><td>Milliseconds to boot up</td></tr>
+      <tr><td><strong>Size</strong></td><td>Gigabytes (requires full Guest OS)</td><td>Megabytes (only app + libs)</td></tr>
+      <tr><td><strong>Efficiency</strong></td><td>High resource overhead</td><td>Zero hypervisor CPU tax</td></tr>
+    </table></div>
+
+    <div class="cb"><div class="ch"><div class="cd"><div class="cdo" style="background:#ff5f56"></div><div class="cdo" style="background:#ffbd2e"></div><div class="cdo" style="background:#27c93f"></div></div><span class="cl">Dockerfile — Packaging a Node.js App securely</span></div>
+<pre># 1. Use lightweight alpine linux image
+FROM node:20-alpine
+
+# 2. Establish isolated working directory
+WORKDIR /usr/src/app
+
+# 3. Cache dependencies
+COPY package*.json ./
+RUN npm ci --only=production
+
+# 4. Copy source files
+COPY . .
+
+# 5. Restrict execution privileges (defends against root breakouts)
+USER node
+
+# 6. Set production environment & expose port
+ENV PORT=3000
+EXPOSE 3000
+
+# 7. Start container
+CMD ["node", "server.js"]</pre></div>
+
+    <div class="st"><span class="sd" style="background:var(--cy)"></span>Kubernetes Architecture Blocks</div>
+    <div class="tw"><table>
+      <tr><th>Object</th><th>Purpose</th><th>Management Layer</th></tr>
+      <tr><td><strong>Pod</strong></td><td>Smallest deployable unit (houses containers)</td><td>Assigned private IP, shares storage limits</td></tr>
+      <tr><td><strong>Deployment</strong></td><td>Manages replica sets and rolling upgrades</td><td>Configures scale numbers, handles zero-downtime rollouts</td></tr>
+      <tr><td><strong>Service</strong></td><td>Internal load balancer directing traffic to pods</td><td>Maintains stable DNS endpoints for dynamic pods</td></tr>
+      <tr><td><strong>Ingress</strong></td><td>External HTTP/S routing rules router</td><td>SSL termination, host-based routing (API gateways)</td></tr>
+    </table></div>
+
+  </div>
+</section>
+
+<!-- PHASE 3 -->
+<section id="p3" class="phase">
+  <div class="ph" style="background:rgba(129,140,248,.03)">
+    <div class="pi" style="background:rgba(129,140,248,.1)">🛠️</div>
+    <div class="pht"><div class="ptag" style="color:var(--in)">Phase 3 · Scalability & Advanced Patterns</div><div class="ptitle">Infrastructure as Code & CI/CD Pipelines</div></div>
+    <span class="phrs">~10 hrs</span>
+  </div>
+  <div class="pb">
+
+    <div class="st"><span class="sd" style="background:var(--in)"></span>Infrastructure as Code (IaC) with Terraform</div>
+    <p>Terraform allows engineers to describe infrastructure state declarative in files. It compares the plan with reality and updates what is necessary.</p>
+    
+    <div class="cb"><div class="ch"><div class="cd"><div class="cdo" style="background:#ff5f56"></div><div class="cdo" style="background:#ffbd2e"></div><div class="cdo" style="background:#27c93f"></div></div><span class="cl">HCL — Terraform AWS S3 & VPC Configuration</span></div>
+<pre>provider "aws" {
+  region = "us-east-1"
+}
+
+# 1. Create a Secure Private S3 Bucket
+resource "aws_s3_bucket" "student_assets" {
+  bucket = "skillvault-x-student-data-production"
+}
+
+# 2. Block all public access for security
+resource "aws_s3_bucket_public_access_block" "block_public" {
+  bucket = aws_s3_bucket.student_assets.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}</pre></div>
+
+    <div class="info">
+      <strong>Standard IaC commands:</strong><br>
+      <ul>
+        <li><code>terraform init</code>: Installs cloud provider plugins</li>
+        <li><code>terraform plan</code>: Previews updates before making changes</li>
+        <li><code>terraform apply</code>: Executes plans to build live cloud services</li>
+        <li><code>terraform destroy</code>: Safely tears down resources to save costs</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHASE 4 -->
+<section id="p4" class="phase">
+  <div class="ph" style="background:rgba(192,132,252,.03)">
+    <div class="pi" style="background:rgba(192,132,252,.1)">🚀</div>
+    <div class="pht"><div class="ptag" style="color:var(--pu)">Phase 4 · Resilient System Design</div><div class="ptitle">High Availability, Monitoring & Disaster Recovery</div></div>
+    <span class="phrs">~15 hrs</span>
+  </div>
+  <div class="pb">
+
+    <div class="st"><span class="sd" style="background:var(--pu)"></span>Designing for 99.99% Availability</div>
+    <p>Resiliency means designing applications that can survive hardware failures, network splits, or datacentre disasters without losing user data.</p>
+    
+    <div class="tw"><table>
+      <tr><th>Pattern</th><th>Mechanic</th><th>Benefit</th></tr>
+      <tr><td><strong>Multi-AZ</strong></td><td>Deploying across multiple independent server clusters</td><td>Protects against local facility failures</td></tr>
+      <tr><td><strong>Load Balancers</strong></td><td>Distributing user requests across healthy servers</td><td>Ensures high-capacity operations and health checking</td></tr>
+      <tr><td><strong>Read Replicas</strong></td><td>Offloading database reads to duplicate nodes</td><td>Prevents master databases from hitting high load boundaries</td></tr>
+      <tr><td><strong>Caching (CDN)</strong></td><td>Caching static assets at global edge locations</td><td>Dramatically decreases load speed and server traffic</td></tr>
+    </table></div>
+
+    <div class="kg">
+      <div class="kc"><span class="ke">🛡️</span><div class="kt" style="color:var(--pu)">Defense</div><div class="kd">Use rate limiting and API firewalls to block DDoS attacks.</div></div>
+      <div class="kc"><span class="ke">📈</span><div class="kt" style="color:var(--cy)">Observables</div><div class="kd">Set up Prometheus metrics and Grafana alerts for server CPU limits.</div></div>
+      <div class="kc"><span class="ke">🔄</span><div class="kt" style="color:var(--em)">Autoscale</div><div class="kd">Scale horizontally (add servers) dynamically based on traffic spikes.</div></div>
+      <div class="kc"><span class="ke">💾</span><div class="kt" style="color:var(--am)">Backups</div><div class="kd">Take regular snapshots and replicate critical databases to other regions.</div></div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">SkillValut X · Cloud Infrastructure Study Guide · Save this page as PDF for offline study</footer>
+</div>
+</body>
+</html>

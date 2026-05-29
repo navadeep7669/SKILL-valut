@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI & Machine Learning — Complete Study Guide | SkillValut X</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#030712;--sf:#070f1f;--sf2:#0b1629;--bd:#1e2d4a;--tx:#e2e8f0;--mu:#64748b;--cy:#22d3ee;--in:#818cf8;--em:#34d399;--pu:#c084fc;--am:#fbbf24}
+body{background:var(--bg);color:var(--tx);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.75;font-size:15px}
+@media print{:root{--bg:#fff;--sf:#f8fafc;--sf2:#f1f5f9;--bd:#e2e8f0;--tx:#1e293b;--mu:#64748b}body{font-size:12px}.no-print{display:none!important}.phase{break-inside:avoid}a{color:#0369a1}pre{white-space:pre-wrap}}
+.bar{position:sticky;top:0;z-index:100;background:rgba(3,7,18,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);padding:.6rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.bar-logo{font-family:monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:var(--pu);font-weight:700}
+.pdf-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1.1rem;background:linear-gradient(135deg,#c084fc,#6366f1);color:#fff;border:none;border-radius:.4rem;cursor:pointer;font-size:.78rem;font-weight:600;transition:opacity .2s}
+.pdf-btn:hover{opacity:.85}
+.wrap{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.hdr{text-align:center;padding:3rem 2rem;background:radial-gradient(ellipse at top,rgba(192,132,252,.08),transparent 70%),var(--sf);border:1px solid var(--bd);border-radius:1rem;margin-bottom:2rem}
+.badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(192,132,252,.1);border:1px solid rgba(192,132,252,.25);color:var(--pu);padding:.3rem .9rem;border-radius:999px;font-size:.72rem;font-family:monospace;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.2rem}
+h1{font-size:2.1rem;font-weight:900;letter-spacing:-.02em;background:linear-gradient(135deg,var(--pu),var(--in),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.75rem}
+.hdr p{color:var(--mu);font-size:.9rem;max-width:520px;margin:0 auto}
+.meta{display:flex;justify-content:center;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+.mi{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--mu);font-family:monospace}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--pu);display:inline-block}
+.toc{background:var(--sf);border:1px solid var(--bd);border-radius:.75rem;padding:1.5rem 2rem;margin-bottom:2rem}
+.toc-ttl{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--mu);font-family:monospace;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.toc-ttl::after{content:'';flex:1;height:1px;background:var(--bd)}
+.toc-g{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem}
+.ti{display:flex;align-items:center;gap:.75rem;padding:.6rem .75rem;background:var(--sf2);border:1px solid var(--bd);border-radius:.5rem;text-decoration:none;transition:border-color .2s}
+.ti:hover{border-color:var(--pu)}
+.pn{width:28px;height:28px;border-radius:.35rem;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;font-family:monospace;flex-shrink:0}
+.pl{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);font-family:monospace}
+.pname{font-size:.82rem;font-weight:600;color:var(--tx)}
+.phase{border:1px solid var(--bd);border-radius:.75rem;margin-bottom:2rem;overflow:hidden}
+.ph{padding:1rem 1.5rem;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:1rem}
+.pi{width:38px;height:38px;border-radius:.5rem;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.pht{flex:1}
+.ptag{font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;font-family:monospace;margin-bottom:.2rem}
+.ptitle{font-size:1.05rem;font-weight:700}
+.phrs{font-size:.72rem;font-family:monospace;color:var(--mu);padding:.2rem .6rem;border:1px solid var(--bd);border-radius:.35rem}
+.pb{padding:1.5rem}
+.st{display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:700;margin:1.5rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--bd)}
+.st:first-child{margin-top:0}
+.sd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+p{color:#94a3b8;font-size:.88rem;margin-bottom:.75rem;line-height:1.7}
+strong{color:var(--tx)}
+code{background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.15);color:var(--pu);padding:.1rem .35rem;border-radius:.25rem;font-family:'JetBrains Mono','Fira Code',monospace;font-size:.8rem}
+.cb{background:#020810;border:1px solid var(--bd);border-radius:.6rem;overflow:hidden;margin:1rem 0}
+.ch{background:var(--sf2);border-bottom:1px solid var(--bd);padding:.4rem 1rem;display:flex;align-items:center;justify-content:space-between}
+.cl{font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;font-family:monospace;color:var(--mu)}
+.cd{display:flex;gap:.35rem}
+.cdo{width:10px;height:10px;border-radius:50%}
+pre{margin:0;padding:1.2rem;overflow-x:auto;font-family:'JetBrains Mono','Fira Code',monospace;font-size:.79rem;line-height:1.7;color:#c084fc}
+.tw{overflow-x:auto;margin:1rem 0}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+th{background:var(--sf2);border:1px solid var(--bd);padding:.55rem .9rem;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-family:monospace}
+td{border:1px solid var(--bd);padding:.55rem .9rem;color:#94a3b8;vertical-align:top}
+tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+td strong{color:var(--tx)}
+td code{font-size:.75rem}
+.tip,.warn,.info{padding:.75rem 1rem;border-radius:0 .5rem .5rem 0;margin:1rem 0;font-size:.84rem;line-height:1.6;color:#94a3b8}
+.tip{background:rgba(52,211,153,.05);border-left:3px solid var(--em)}
+.warn{background:rgba(251,191,36,.05);border-left:3px solid var(--am)}
+.info{background:rgba(129,140,248,.05);border-left:3px solid var(--in)}
+.tip strong{color:var(--em)}.warn strong{color:var(--am)}.info strong{color:var(--in)}
+ul,ol{padding-left:1.5rem;margin-bottom:.75rem}
+li{color:#94a3b8;font-size:.88rem;margin-bottom:.35rem;line-height:1.6}
+li strong{color:var(--tx)}
+.kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.75rem;margin:1rem 0}
+.kc{background:var(--sf2);border:1px solid var(--bd);border-radius:.6rem;padding:.9rem}
+.ke{font-size:1.3rem;margin-bottom:.4rem;display:block}
+.kt{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:.3rem;font-family:monospace}
+.kd{font-size:.8rem;color:var(--mu)}
+.footer{text-align:center;border-top:1px solid var(--bd);padding:2rem;color:var(--mu);font-size:.78rem;font-family:monospace;margin-top:2rem}
+</style>
+</head>
+<body>
+<div class="bar no-print">
+  <span class="bar-logo">⚡ SkillValut X · Study Notes</span>
+  <button class="pdf-btn" onclick="window.print()">📄 Save as PDF</button>
+</div>
+<div class="wrap">
+
+<header class="hdr">
+  <div class="badge">🧠 AI & Machine Learning Track</div>
+  <h1>Artificial Intelligence<br>Complete Guide</h1>
+  <p>From fundamental statistics and linear algebra to transformer cores, deep architectures, and production MLOps.</p>
+  <div class="meta">
+    <span class="mi"><span class="dot"></span> 4 Phases</span>
+    <span class="mi"><span class="dot" style="background:var(--in)"></span> 45+ Hours Total</span>
+    <span class="mi"><span class="dot" style="background:var(--cy)"></span> Beginner → Advanced</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-ttl">Contents</div>
+  <div class="toc-g">
+    <a href="#p1" class="ti"><div class="pn" style="background:rgba(192,132,252,.1);color:var(--pu)">P1</div><div><div class="pl">Phase 1 · 5h</div><div class="pname">Python & Core ML</div></div></a>
+    <a href="#p2" class="ti"><div class="pn" style="background:rgba(129,140,248,.1);color:var(--in)">P2</div><div><div class="pl">Phase 2 · 8h</div><div class="pname">Deep Learning & PyTorch</div></div></a>
+    <a href="#p3" class="ti"><div class="pn" style="background:rgba(34,211,238,.1);color:var(--cy)">P3</div><div><div class="pl">Phase 3 · 10h</div><div class="pname">Transformers & LLMs</div></div></a>
+    <a href="#p4" class="ti"><div class="pn" style="background:rgba(52,211,153,.1);color:var(--em)">P4</div><div><div class="pl">Phase 4 · 15h</div><div class="pname">Production & MLOps</div></div></a>
+  </div>
+</nav>
+
+<!-- PHASE 1 -->
+<section id="p1" class="phase">
+  <div class="ph" style="background:rgba(192,132,252,.03)">
+    <div class="pi" style="background:rgba(192,132,252,.1)">📊</div>
+    <div class="pht"><div class="ptag" style="color:var(--pu)">Phase 1 · Core Fundamentals</div><div class="ptitle">ML Pipelines, Data Science & Scikit-Learn</div></div>
+    <span class="phrs">~5 hrs</span>
+  </div>
+  <div class="pb">
+
+    <div class="st"><span class="sd" style="background:var(--pu)"></span>Data Manipulation & Vectorized Math</div>
+    <p>Modern ML builds upon **vectorized arrays** using NumPy and DataFrames in Pandas. Avoiding raw loops in Python is essential for training efficiency.</p>
+    <div class="tw"><table>
+      <tr><th>Library</th><th>Key Structure</th><th>Core Operations</th><th>Best For</th></tr>
+      <tr><td><strong>NumPy</strong></td><td><code>np.ndarray</code></td><td>Vector dot products, matrix multiplication, broadcasting</td><td>High-performance numerical vector grids</td></tr>
+      <tr><td><strong>Pandas</strong></td><td><code>pd.DataFrame</code></td><td>Grouping, merging, filtering, cleaning missing values</td><td>Tabular data processing and features</td></tr>
+      <tr><td><strong>Scikit-Learn</strong></td><td>Estimator classes</td><td><code>fit()</code>, <code>transform()</code>, <code>predict()</code> pipelines</td><td>Classical machine learning and preprocessing</td></tr>
+    </table></div>
+
+    <div class="st"><span class="sd" style="background:var(--pu)"></span>Regularization: L1 (Lasso) vs L2 (Ridge)</div>
+    <p>Regularization prevents models from **overfitting** by penalizing complex coefficient weights during training.</p>
+    <div class="tw"><table>
+      <tr><th>Regularization Type</th><th>Penalty Formula</th><th>Mathematical Effect</th><th>When to Use</th></tr>
+      <tr><td><strong>L1 (Lasso)</strong></td><td>Absolute weights sum: <code>λ * Σ|w|</code></td><td>Forces weights to **exactly zero**, creating sparsity</td><td>Feature selection (removes noisy inputs)</td></tr>
+      <tr><td><strong>L2 (Ridge)</strong></td><td>Squared weights sum: <code>λ * Σ(w²)</code></td><td>Shrinks weights **close to zero**, keeps them non-zero</td><td>Defends against collinearity (interdependent features)</td></tr>
+      <tr><td><strong>ElasticNet</strong></td><td>Weighted combo: <code>r*L1 + (1-r)*L2</code></td><td>Blended sparsity and weight decay scaling</td><td>Complex features with strong interactions</td></tr>
+    </table></div>
+
+    <div class="cb"><div class="ch"><div class="cd"><div class="cdo" style="background:#ff5f56"></div><div class="cdo" style="background:#ffbd2e"></div><div class="cdo" style="background:#27c93f"></div></div><span class="cl">Python — Clean Scikit-Learn ML Pipeline</span></div>
+<pre>import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LassoCV
+from sklearn.pipeline import Pipeline
+
+# 1. Load mock data representing student profile telemetry
+data = pd.DataFrame({
+    'study_hours': [4, 9, 2, 12, 5, 8, 15, 3],
+    'quiz_score': [60, 95, 40, 100, 70, 85, 98, 55],
+    'speed_index': [1.2, 2.5, 0.8, 3.0, 1.5, 2.2, 2.8, 1.0],
+    'will_master': [0, 1, 0, 1, 0, 1, 1, 0]
+})
+
+# 2. Extract features & target vectors
+X = data[['study_hours', 'quiz_score', 'speed_index']]
+y = data['will_master']
+
+# 3. Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+
+# 4. Standardize and Train with Lasso L1 regularizer inside a Pipeline
+pipeline = Pipeline([
+    ('scaler', StandardScaler()),
+    ('model', LassoCV(cv=3))
+])
+
+pipeline.fit(X_train, y_train)
+score = pipeline.score(X_test, y_test)
+print(f"✓ Pipeline trained successfully. R^2 Test score: {score:.3f}")</pre></div>
+
+    <div class="tip"><strong>💡 Rule:</strong> Always standardize your features using <code>StandardScaler</code> before applying regularization. L1/L2 penalties are highly sensitive to feature scaling!</div>
+
+  </div>
+</section>
+
+<!-- PHASE 2 -->
+<section id="p2" class="phase">
+  <div class="ph" style="background:rgba(129,140,248,.03)">
+    <div class="pi" style="background:rgba(129,140,248,.1)">⚛️</div>
+    <div class="pht"><div class="ptag" style="color:var(--in)">Phase 2 · Deep Learning Core</div><div class="ptitle">Neural Network Mathematics & PyTorch</div></div>
+    <span class="phrs">~8 hrs</span>
+  </div>
+  <div class="pb">
+
+    <div class="st"><span class="sd" style="background:var(--in)"></span>Backpropagation & Gradient Descent</div>
+    <p>Neural networks learn by calculating **loss gradients** via the chain rule and adjusting weights in the opposite direction of the gradient.</p>
+    <div class="tw"><table>
+      <tr><th>Operation</th><th>Mathematical Concept</th><th>Role in Deep Learning</th></tr>
+      <tr><td><strong>Forward Pass</strong></td><td>Matrix multiplication + Activation Function</td><td>Computes predictions and active state coordinates</td></tr>
+      <tr><td><strong>Loss Function</strong></td><td>Error assessment (e.g., MSE or Cross Entropy)</td><td>Quantifies discrepancy between prediction and ground truth</td></tr>
+      <tr><td><strong>Backward Pass</strong></td><td>Chain Rule derivatives: <code>∂Loss / ∂w</code></td><td>Propagates errors backwards to find weight importances</td></tr>
+      <tr><td><strong>Optimization</strong></td><td>Weight updates: <code>w = w - η * (∂Loss / ∂w)</code></td><td>Updates weights to systematically lower loss curves</td></tr>
+    </table></div>
+
+    <div class="cb"><div class="ch"><div class="cd"><div class="cdo" style="background:#ff5f56"></div><div class="cdo" style="background:#ffbd2e"></div><div class="cdo" style="background:#27c93f"></div></div><span class="cl">PyTorch — Training a Simple Multi-Layer Perceptron (MLP)</span></div>
+<pre>import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# 1. Define modular Neural Network structure
+class SkillPredictor(nn.Module):
+    def __init__(self, input_dim):
+        super(SkillPredictor, self).__init__()
+        self.network = nn.Sequential(
+            nn.Linear(input_dim, 16),
+            nn.ReLU(),  # Defends against vanishing gradients
+            nn.Linear(16, 8),
+            nn.ReLU(),
+            nn.Linear(8, 1),
+            nn.Sigmoid()  # Restricts outputs between 0 and 1
+        )
+        
+    def forward(self, x):
+        return self.network(x)
+
+# 2. Initialize Model, Binary Cross Entropy Loss & Adam Optimizer
+model = SkillPredictor(input_dim=3)
+criterion = nn.BCELoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+# 3. Simulate training iteration loop
+dummy_inputs = torch.randn(10, 3)
+dummy_labels = torch.randint(0, 2, (10, 1)).float()
+
+for epoch in range(1, 11):
+    optimizer.zero_grad()  # Reset gradient buffers
+    outputs = model(dummy_inputs)
+    loss = criterion(outputs, dummy_labels)
+    loss.backward()  # Backpropagation pass
+    optimizer.step()  # Weight optimization update
+    
+    print(f"Epoch {epoch}/10 | Training Loss: {loss.item():.4f}")</pre></div>
+
+    <div class="warn"><strong>⚠️ Exploding Gradients:</strong> Deep models can suffer from values growing uncontrollably. Defend your training loop by applying gradient clipping: <code>nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)</code>!</div>
+
+  </div>
+</section>
+
+<!-- PHASE 3 -->
+<section id="p3" class="phase">
+  <div class="ph" style="background:rgba(34,211,238,.03)">
+    <div class="pi" style="background:rgba(34,211,238,.1)">🤖</div>
+    <div class="pht"><div class="ptag" style="color:var(--cy)">Phase 3 · Advanced Architectures</div><div class="ptitle">Transformer Cores & Generative AI</div></div>
+    <span class="phrs">~10 hrs</span>
+  </div>
+  <div class="pb">
+
+    <div class="st"><span class="sd" style="background:var(--cy)"></span>Self-Attention: The Transformer Core</div>
+    <p>Transformers process sequences in parallel using **Self-Attention**, mapping input tokens to three spaces: Queries, Keys, and Values.</p>
+    <div class="info">
+      <strong>Attention Formula:</strong><br>
+      <code>Attention(Q, K, V) = softmax( (Q * Kᵀ) / √d_k ) * V</code><br>
+      Where:
+      <ul>
+        <li><strong>Q (Query)</strong>: What the token is looking for</li>
+        <li><strong>K (Key)</strong>: What the token contains</li>
+        <li><strong>V (Value)</strong>: The actual content payload of the token</li>
+        <li><strong>√d_k</strong>: Scaling factor preventing the softmax gradients from vanishing</li>
+      </ul>
+    </div>
+
+    <div class="tw"><table>
+      <tr><th>Component</th><th>Purpose</th><th>When to Use</th></tr>
+      <tr><td><strong>Encoder Block</strong></td><td>Bidirectional contextual representation</td><td>Classification, BERT, Entity recognition</td></tr>
+      <tr><td><strong>Decoder Block</strong></td><td>Causal autoregressive next-token prediction</td><td>Text generation, GPT, chatbot mentors</td></tr>
+      <tr><td><strong>Multi-Head Attention</strong></td><td>Learns query relations in multiple subspaces</td><td>Extracting rich syntactic or semantics models</td></tr>
+    </table></div>
+
+    <div class="cb"><div class="ch"><div class="cd"><div class="cdo" style="background:#ff5f56"></div><div class="cdo" style="background:#ffbd2e"></div><div class="cdo" style="background:#27c93f"></div></div><span class="cl">Python — Generative Text Inference with HuggingFace</span></div>
+<pre>from transformers import pipeline
+
+# 1. Instantiate the pipeline module
+# Downloads and mounts a light model onto memory automatically
+generator = pipeline("text-generation", model="gpt2")
+
+# 2. Define standard educational prompt
+prompt = "To master Python for machine learning, a student should focus on"
+
+# 3. Generate autoregressive tokens
+results = generator(prompt, max_length=50, num_return_sequences=1)
+
+print("\n--- Model Output ---")
+print(results[0]["generated_text"])</pre></div>
+
+  </div>
+</section>
+
+<!-- PHASE 4 -->
+<section id="p4" class="phase">
+  <div class="ph" style="background:rgba(52,211,153,.03)">
+    <div class="pi" style="background:rgba(52,211,153,.1)">🚀</div>
+    <div class="pht"><div class="ptag" style="color:var(--em)">Phase 4 · MLOps & System Design</div><div class="ptitle">Model Deployment & Life Cycle Tracking</div></div>
+    <span class="phrs">~15 hrs</span>
+  </div>
+  <div class="pb">
+
+    <div class="st"><span class="sd" style="background:var(--em)"></span>FastAPI Model Deployment Matrix</div>
+    <p>Deploying AI models requires packaging them into clean APIs. Model binaries should be pre-loaded at server startup rather than on each request thread.</p>
+
+    <div class="cb"><div class="ch"><div class="cd"><div class="cdo" style="background:#ff5f56"></div><div class="cdo" style="background:#ffbd2e"></div><div class="cdo" style="background:#27c93f"></div></div><span class="cl">Python — Deploying Predictor API using FastAPI</span></div>
+<pre>from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+import torch
+import numpy as np
+
+app = FastAPI(title="SkillValut X AI Core API")
+
+# Mock simple model parameters
+WEIGHTS = torch.tensor([0.2, 0.7, 0.1])
+BIAS = -0.5
+
+class PredictRequest(BaseModel):
+    study_hours: float
+    quiz_score: float
+    speed_index: float
+
+@app.post("/predict")
+def predict_score(req: PredictRequest):
+    try:
+        # Load inputs as torch tensor
+        inputs = torch.tensor([req.study_hours, req.quiz_score, req.speed_index])
+        
+        # Calculate logit forward pass
+        logit = torch.dot(inputs, WEIGHTS) + BIAS
+        probability = torch.sigmoid(logit).item()
+        
+        return {
+            "probability": probability,
+            "prediction": 1 if probability >= 0.5 else 0
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))</pre></div>
+
+    <div class="kg">
+      <div class="kc"><span class="ke">📦</span><div class="kt" style="color:var(--pu)">Dockerize</div><div class="kd">Bundle model weights and libraries into containers for consistent environment execution.</div></div>
+      <div class="kc"><span class="ke">📊</span><div class="kt" style="color:var(--cy)">Metrics</div><div class="kd">Measure inference latency, track throughput (QPS), and log input drift variations.</div></div>
+      <div class="kc"><span class="ke">💾</span><div class="kt" style="color:var(--em)">Versioning</div><div class="kd">Use systems like DVC or MLflow to track data sets and checkpoint files.</div></div>
+      <div class="kc"><span class="ke">⚡</span><div class="kt" style="color:var(--am)">Accelerators</div><div class="kd">Enable CUDA, TensorRT, or ONNX runtimes to speed up high-frequency prediction servers.</div></div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">SkillValut X · AI & Machine Learning Complete Study Guide · Save this page as PDF for offline study</footer>
+</div>
+</body>
+</html>
