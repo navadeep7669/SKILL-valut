@@ -1,0 +1,14 @@
+# Backend secrets & local files
+.env
+.env.*
+
+__pycache__/
+*.py[cod]
+
+# Local SQLite database(s)
+*.db
+
+# Python virtual envs (if created inside backend)
+venv/
+.venv/
+
