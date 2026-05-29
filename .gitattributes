@@ -1,15 +1,1 @@
-# Default Git attributes
-# Backend secrets & local files
-.env.*
-.env
-backend/.env
-
-__pycache__/
-*.py[cod]
-
-# Local SQLite database(s)
-*.db
-
-# Python virtual envs (if created inside backend)
-venv/
-.venv/
+* text=auto
